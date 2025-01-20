@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>داشبورد دانشجو</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+        }
+        .btn-green {
+            background-color: #38A169;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .btn-green:hover {
+            background-color: #2F855A;
+        }
+        .btn-blue {
+            background-color: #3182CE;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .btn-blue:hover {
+            background-color: #2B6CB0;
+        }
+        .btn-gray {
+            background-color: #E2E8F0;
+            color: #2D3748;
+            transition: background-color 0.3s;
+        }
+        .btn-gray:hover {
+            background-color: #CBD5E0;
+        }
+    </style>
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">

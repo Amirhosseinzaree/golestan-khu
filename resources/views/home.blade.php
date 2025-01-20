@@ -6,6 +6,14 @@
     <title>سامانه ثبت نمرات دانشگاه</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+        }
+    </style>
+
+    
     <script>
         const toggleTheme = () => {
             document.documentElement.classList.toggle('dark');
