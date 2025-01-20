@@ -9,8 +9,10 @@
 <body class="bg-gray-100">
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-2xl font-bold text-center mb-6">داشبورد دانشجو</h1>
-
-        <!-- جدول -->
+        <button onclick="openFoodModal()"
+                class="mb-4 bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">
+            رزرو غذا
+        </button>
         <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
             <table class="table-auto w-full text-sm text-center">
                 <thead class="bg-gray-200 text-gray-600">
@@ -21,7 +23,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- ردیف‌های جدول -->
                     <tr>
                         <td class="py-2 px-4">صدای در چند رسانه ای</td>
                         <td class="py-2 px-4">18</td>
@@ -72,33 +73,33 @@
                     </tr>
                     <tr>
                         <td class="py-2 px-4">گرافیک متحرک</td>
-                        <td class="py-2 px-4">20</td>
+                        <td class="py-2 px-4 text-red-600">7</td>
                         <td class="py-2 px-4">
                             <button onclick="openModal('اعتراض برای درس گرافیک متحرک')"
                                     class="bg-blue-500 text-white px-4 py-1 rounded">ثبت اعتراض</button>
                         </td>
                     </tr>
                     <tr>
-                        <td class="py-2 px-4">تصویربرداری</td>
-                        <td class="py-2 px-4">14</td>
+                        <td class="py-2 px-4"> تصویر برداری</td>
+                        <td class="py-2 px-4">20</td>
                         <td class="py-2 px-4">
-                            <button onclick="openModal('اعتراض برای درس تصویربرداری')"
+                            <button onclick="openModal('اعتراض برای درس تصویربرداری ')"
                                     class="bg-blue-500 text-white px-4 py-1 rounded">ثبت اعتراض</button>
                         </td>
                     </tr>
                     <tr>
-                        <td class="py-2 px-4">کارگردانی</td>
-                        <td class="py-2 px-4">15</td>
+                        <td class="py-2 px-4">کارگردانی </td>
+                        <td class="py-2 px-4">19</td>
                         <td class="py-2 px-4">
-                            <button onclick="openModal('اعتراض برای درس کارگردانی')"
+                            <button onclick="openModal('اعتراض برای درس کارگردانی ')"
                                     class="bg-blue-500 text-white px-4 py-1 rounded">ثبت اعتراض</button>
                         </td>
                     </tr>
                     <tr>
-                        <td class="py-2 px-4">صدا در چندرسانه ای</td>
-                        <td class="py-2 px-4">16</td>
+                        <td class="py-2 px-4"> هندسه ترسیمی</td>
+                        <td class="py-2 px-4 text-red-600">9</td>
                         <td class="py-2 px-4">
-                            <button onclick="openModal('اعتراض برای درس صدا در چندرسانه ای')"
+                            <button onclick="openModal('اعتراض برای درس هندسه ترسیمی ')"
                                     class="bg-blue-500 text-white px-4 py-1 rounded">ثبت اعتراض</button>
                         </td>
                     </tr>
@@ -106,23 +107,7 @@
                         <td class="py-2 px-4">طراحی مقدماتی</td>
                         <td class="py-2 px-4">17</td>
                         <td class="py-2 px-4">
-                            <button onclick="openModal('اعتراض برای درس طراحی مقدماتی')"
-                                    class="bg-blue-500 text-white px-4 py-1 rounded">ثبت اعتراض</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="py-2 px-4">ریاضی</td>
-                        <td class="py-2 px-4">18</td>
-                        <td class="py-2 px-4">
-                            <button onclick="openModal('اعتراض برای درس ریاضی')"
-                                    class="bg-blue-500 text-white px-4 py-1 rounded">ثبت اعتراض</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="py-2 px-4">هندسه ترسیمی</td>
-                        <td class="py-2 px-4">19</td>
-                        <td class="py-2 px-4">
-                            <button onclick="openModal('اعتراض برای درس هندسه ترسیمی')"
+                            <button onclick="openModal('اعتراض برای درس طراحی مقدماتی ')"
                                     class="bg-blue-500 text-white px-4 py-1 rounded">ثبت اعتراض</button>
                         </td>
                     </tr>
@@ -130,36 +115,117 @@
             </table>
         </div>
 
-        <!-- Modal -->
-        <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+        <div id="foodModal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
             <div class="bg-white p-6 rounded-lg w-96">
-                <h2 class="text-lg font-semibold mb-4">ثبت اعتراض</h2>
-                <p id="modal-message" class="text-gray-700 mb-4"></p>
-                <textarea id="comment" class="w-full p-2 border border-gray-300 rounded-md" placeholder="توضیح اعتراض خود را وارد کنید..."></textarea>
+                <h2 class="text-lg font-semibold mb-4">هفته جاری</h2>
+
+                <table class="table-auto w-full text-sm text-center mt-2">
+                    <thead class="bg-gray-200 text-gray-600">
+                        <tr>
+                            <th class="py-2 px-4">روز</th>
+                            <th class="py-2 px-4">غذا</th>
+                            <th class="py-2 px-4">رزرو</th>
+                        </tr>
+                    </thead>
+                    <tbody id="foodList">
+                    </tbody>
+                </table>
+
                 <div class="mt-4 flex justify-between">
-                    <button onclick="closeModal()" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md">بستن</button>
-                    <button onclick="submitComplaint()" class="bg-blue-600 text-white px-4 py-2 rounded-md">تایید اعتراض</button>
+                    <button onclick="previousPage()" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md">قبلی</button>
+                    <button onclick="nextPage()" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md">بعدی</button>
+                </div>
+
+                <div class="mt-4 flex justify-between">
+                    <button onclick="closeFoodModal()" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md">لغو</button>
+                    <button onclick="submitReservation()" class="bg-blue-600 text-white px-4 py-2 rounded-md">ثبت رزرو</button>
                 </div>
             </div>
         </div>
     </div>
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+        <div class="bg-white p-6 rounded-lg w-96">
+            <h2 class="text-lg font-semibold mb-4">ثبت اعتراض</h2>
+            <p id="modal-message" class="text-gray-700 mb-4"></p>
+            <textarea id="comment" class="w-full p-2 border border-gray-300 rounded-md" placeholder="توضیحات"></textarea>
+            <div class="mt-4 flex justify-between">
+                <button onclick="closeModal()" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md">بستن</button>
+                <button onclick="submitComplaint()" class="bg-blue-600 text-white px-4 py-2 rounded-md">تایید اعتراض</button>
+            </div>
+        </div>
+    </div>
+</div>
 
     <script>
+        let currentPage = 1;
+        const foodOptions = [
+            ['ساندویچ سرد', 'زرشک پلو', 'ماکارونی', 'لوبیا پلو', 'قیمه نثار', 'قرمه سبزی'], 
+            ['قیمه نثار', 'ماکارونی', 'زرشک پلو', 'قرمه سبزی', 'ساندویچ سرد', 'لوبیا پلو'], 
+            ['ساندویچ سرد', 'ماکارونی', 'قیمه نثار', 'زرشک پلو', 'لوبیا پلو', 'قرمه سبزی'], 
+            ['زرشک پلو', 'قیمه نثار', 'قرمه سبزی', 'ماکارونی', 'ساندویچ سرد', 'لوبیا پلو']   
+        ];
+
+        function openFoodModal() {
+            document.getElementById('foodModal').classList.remove('hidden');
+            updateFoodList();
+        }
+
+        function closeFoodModal() {
+            document.getElementById('foodModal').classList.add('hidden');
+        }
+
+        function nextPage() {
+            currentPage++;
+            if (currentPage > foodOptions.length) currentPage = 1; 
+            updateFoodList();
+        }
+
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+            } else {
+                currentPage = foodOptions.length;
+            }
+            updateFoodList();
+        }
+
+        function updateFoodList() {
+            const foodItems = document.getElementById('foodList');
+            foodItems.innerHTML = '';  
+
+            const foods = shuffleArray(foodOptions[currentPage - 1]);
+
+            const days = ['شنبه', 'یکشنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنج‌شنبه'];
+            for (let i = 0; i < foods.length; i++) {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td class="py-2 px-4">${days[i]}</td><td class="py-2 px-4">${foods[i]}</td><td class="py-2 px-4"><input type="checkbox" class="food-checkbox"></td>`;
+                foodItems.appendChild(tr);
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // تعویض عناصر
+            }
+            return array;
+        }
+
+        function submitReservation() {
+            alert('رزرو شما با موفقیت انجام شد!');
+            closeFoodModal();
+        }
         function openModal(message) {
             document.getElementById('modal-message').innerText = message;
             document.getElementById('modal').classList.remove('hidden');
         }
 
-        
         function closeModal() {
             document.getElementById('modal').classList.add('hidden');
         }
 
-       
         function submitComplaint() {
             const comment = document.getElementById('comment').value;
-
-         
             alert('اعتراض ثبت شد');
             closeModal();
         }
